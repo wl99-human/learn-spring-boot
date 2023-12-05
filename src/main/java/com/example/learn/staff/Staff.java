@@ -1,8 +1,23 @@
 package com.example.learn.staff;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Staff {
+    @Id
+    @SequenceGenerator(
+            name = "staff_sequence",
+            sequenceName = "staff_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "staff_sequence"
+    )
     private Long id;
     private String name;
     private String email;
