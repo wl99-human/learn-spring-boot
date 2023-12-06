@@ -16,15 +16,13 @@ public class StaffConfig {
             Staff ali = new Staff(
                     "Ali",
                     "ali64@gmail.com",
-                    LocalDate.of(2000, Month.JANUARY, 5),
-                    21
+                    LocalDate.of(2000, Month.JANUARY, 5)
             );
 
             Staff adam = new Staff(
                     "Adam",
                     "adam88@gmail.com",
-                    LocalDate.of(2002, Month.NOVEMBER, 7),
-                    22
+                    LocalDate.of(2002, Month.NOVEMBER, 7)
             );
 
             staffRepository.saveAll(List.of(ali, adam));
