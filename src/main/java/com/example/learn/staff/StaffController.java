@@ -1,9 +1,7 @@
 package com.example.learn.staff;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,10 @@ public class StaffController {
     @GetMapping
     public List<Staff> getStaff() {
         return staffService.getStaff();
+    }
+
+    @PostMapping
+    public void registerNewStaff(@RequestBody Staff staff) {
+        staffService.addNewStaff(staff);
     }
 }
