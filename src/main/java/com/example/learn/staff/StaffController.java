@@ -23,4 +23,9 @@ public class StaffController {
     public void registerNewStaff(@RequestBody Staff staff) {
         staffService.addNewStaff(staff);
     }
+
+    @DeleteMapping(path = "{staffId}")
+    public void deleteStaff(@PathVariable("staffId") Long staffId) {
+        staffService.deleteStaff(staffId);
+    }
 }

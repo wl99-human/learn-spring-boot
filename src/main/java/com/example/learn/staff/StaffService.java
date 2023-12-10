@@ -25,4 +25,12 @@ public class StaffService {
         }
         staffRepository.save(staff);
     }
+
+    public void deleteStaff(Long staffId) {
+        boolean existsStaff = staffRepository.existsById(staffId);
+        if (!existsStaff) {
+            throw new IllegalStateException("Staff with ID "+staffId+ " does not exists");
+        }
+        staffRepository.deleteById(staffId);
+    }
 }
