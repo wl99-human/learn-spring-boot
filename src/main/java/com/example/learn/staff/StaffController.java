@@ -28,4 +28,11 @@ public class StaffController {
     public void deleteStaff(@PathVariable("staffId") Long staffId) {
         staffService.deleteStaff(staffId);
     }
+
+    @PutMapping(path = "{staffId}")
+    public void updateStaff(@PathVariable("staffId") Long staffId,
+                            @RequestParam(required = false) String name,
+                            @RequestParam(required = false) String email) {
+        staffService.updateStaff(staffId, name, email);
+    }
 }
